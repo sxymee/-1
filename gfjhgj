@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Перемещение мышки</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+  <div class="content-border">
+    <div class="content">
+      <div class="title-org">ООО "Евроторг"</div>
+      <div class="title">СПАСИБО ЗА ПОКУПКУ</div>
+      <div class="buy-date">Дата покупки</div>
+      <div class="product-name">Наименивание товара</div>
+      <div class="all"></div>
+      <div class="discount">Ваша скидка</div>
+      <div class="withDiscount">Сумма со скидкой</div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.content-border {
+  width: 300px;
+  margin: 0 auto;
+  border: 1px solid #666;
+  padding: 10px;
+}
+.content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.content div{
+  margin-bottom: 10px;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+.all {
+  font-weight: bold;
+}
+
+.withDiscount {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+
+
+let discountPrompt = prompt('Размер скидки: ')
+
+let discount = document.querySelector(".discount");
+discount.innerText = `${discount.innerText}: ${discountPrompt}%`;
+
+let buyDate = document.querySelector(".buy-date");
+
+let date1 = new Date();
+
+buyDate.innerHTML = `${buyDate.innerText}: ${date1.toLocaleDateString()} ${date1.toLocaleTimeString()}`;
+
+let price = prompt("Введите цену товара: ");
+let productName = document.querySelector(".product-name");
+
+if (discountPrompt < 5 && discountPrompt > 0 && price) {
+  productName.innerText = `${productName.innerText}: Молоко ${price} руб.`
+
+  let all = document.querySelector(".all");
+
+  all.innerText = `Итого: ${price} руб.`;
+
+  let withDiscount = document.querySelector(".withDiscount");
+
+  let pr = (price / 100) * 3;
+
+  withDiscount.innerText = `${withDiscount.innerText}: ${price - Math.floor(pr)} руб.`;
+} else {
+  alert("Размер скидки 1-5%")
+}
+
