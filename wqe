@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Перемещение мышки</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="V"></div>
+  <div class="S"></div>
+  <div class="B"></div>
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+let a = prompt("Сторона a: ")
+let resultV = a ** 3;
+
+document.querySelector(".V").innerText = `V = ${resultV}`
+
+let resultS = 6 * a ** 3
+
+document.querySelector(".S").innerText = `S = ${resultS}`
+
+let b = prompt("Значение b: ")
+let x = prompt("Значение x: ")
+let y = prompt("Значение y: ")
+let z = prompt("Значение z: ")
+
+let resultB = Math.exp(Math.abs(x - y)) * ((Math.tan(z) ** 2 + 1) ** x)
+
+document.querySelector(".B").innerText = `${resultB}`
