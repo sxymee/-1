@@ -1,0 +1,128 @@
+
+// Задание 1(1) ____________________________
+document.write(`Задание 1 </br>`)
+const num = (a) => {
+  return a * (a + 1) /2
+}
+
+const arr = [num(1), num(2), num(3)]
+
+for (item of arr) {
+  document.write(`${item} `)
+}
+
+document.write(`</br>`)
+
+// Задание 1(2) ____________________________
+
+const kvd = []
+
+for (i = 1; i < 10; i++) {
+  kvd.push(i ** 2)
+}
+
+for (item of kvd) {
+  document.write(`${item} `)
+}
+
+document.write(`</br>`)
+
+// Задание 1(3) ____________________________
+
+const rez = []
+
+rez.push(arr, kvd)
+
+document.write(`rez: ${rez}`)
+
+document.write(`</br>`)
+
+// Задание 2 ____________________________
+
+document.write(`</br> Задание 2`)
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+const randomArr = []
+
+var max = 100
+
+for (i = 0; i < 10; i++) {
+  var a = getRandomInt(100)
+  randomArr.push(a)
+  if (a < max) max = a
+}
+
+
+document.write(`</br > randomArr: ${randomArr} `)
+
+document.write(`</br>`)
+document.write(`Max: ${max} `)
+
+randomArr[randomArr.indexOf(max)] = "3N"
+
+randomArr[randomArr.length - 1] = max
+
+document.write(`</br> randomArr: ${randomArr} `)
+
+// Задание 3 ___________________________
+document.write(`</br> </br>Задание 3`)
+
+const randomArr2 = []
+
+for (i = 0; i < 10; i++) {
+  var a = getRandomInt(100)
+  randomArr2.push(a)
+  if (a < max) max = a
+}
+
+var sum = 0
+var s = 0
+var c = 34
+for (item of randomArr2) {
+  if (item % 2 === 0 && item !== c) {
+    sum += item;
+    s += 1
+  }
+}
+document.write(`</br> randmArr2: ${randomArr2}`)
+document.write(`</br> middle: ${sum / s}`)
+
+
+// Задание 4 ____________________________
+document.write(`</br> </br>Задание 4 </br>`)
+const fruits = ['apple', 'pineapple', 'mango', 'melon', 'grape'];
+const citrus = ['orange', 'lemon', 'lime']
+const arr1 = [...fruits]
+arr2 = [...fruits]
+for (item of fruits) {
+  document.write(`${item} `)
+}
+
+document.write('</br>')
+
+for (item of citrus) {
+  document.write(`${item} `)
+}
+
+document.write('</br>')
+
+fruits.push(citrus)
+
+for (item of fruits) {
+  document.write(`${item} `)
+}
+
+arr1.splice(arr1.indexOf('melon' + 1), 0, 'pear','cherry', 'plum', 'raspberry', 'strawberry')
+document.write(`</br> ${arr1}`)
+
+const result = arr2.filter((items, index) => {
+  if (index < arr2.length - 4) {
+    return true
+  }
+})
+
+document.write(`</br> ${result}`)
+document.write(`</br> ${fruits.sort()}`)
